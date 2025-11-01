@@ -1,0 +1,42 @@
+.top-bar {
+  position: fixed; 
+  top: 0;          
+  left: 0;         
+  width: 100%;     
+  box-sizing: border-box; 
+  
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;           
+
+  
+  background-color: #1a202c; 
+  padding: 0px 0px;       
+
+}
+.logo {
+  color: white;
+}
+.logo span {
+  color: orange;
+}
+
+.new-semester-btn {
+  padding: 8px 16px;
+  border-radius: 0px;
+  border: none;
+  background-color: orange;
+  color: white;
+
+}
+
+
+.dashboard-content {
+    color: white;
+}
+
+
+body{
+  background-color: #282c34;
+  font-family: sans-serif;
+}

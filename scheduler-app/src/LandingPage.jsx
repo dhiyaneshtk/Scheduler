@@ -11,7 +11,7 @@ function LandingPage() {
     navigate('/dashboard');
   }
   return (
-    <div>
+    <div >
       <h1 className="title">Course <span className="orange">Maker</span></h1>
       <button onClick={handleClick}>Get Started</button>
       
