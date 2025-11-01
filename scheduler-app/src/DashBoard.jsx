@@ -3,8 +3,8 @@ import './Dashboard.css';
 
 function Dashboard() {
     function handleNewSemester() {
-    alert("Starting a new semester!");
-  }
+      alert("Starting a new semester!");
+    }
 
   return (
     <div> 
