@@ -11,7 +11,7 @@ function Dashboard() {
       {/* Top bar */}
        <div className="top-bar">
           <h1 className="logo">
-               Course<span>Maker</span>
+            Course<span>Maker</span>
           </h1>
         <button className= "CreateNewSemester-btn" onClick={handleNewSemester}> + New Semester</button>
        </div>
