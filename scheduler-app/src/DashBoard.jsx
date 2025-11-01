@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Dashboard.css';
+import ScheduleForm from './ScheduleForm';
 
 function Dashboard() {
-    function handleNewSemester() {
-      alert("Starting a new semester!");
-    }
+  const [showForm, setShowForm] = useState(false); 
+
+  function handleNewSemester() {
+    setShowForm(!showForm);
+  }
 
   return (
     <div> 
@@ -13,10 +16,14 @@ function Dashboard() {
           <h1 className="logo">
             Course<span>Maker</span>
           </h1>
-        <button className= "CreateNewSemester-btn" onClick={handleNewSemester}> + New Semester</button>
+        <button className="createNewSemester-btn" onClick={handleNewSemester}>+ New Semester</button>
        </div>
     <div className = "dashBoard-content"> {/* Dashboard content */}
-      <p>Welcome to your dashboard!</p>
+        {!showForm ? (
+          <p>Welcome to your dashboard!</p>
+        ) : (
+          <ScheduleForm /> 
+        )}
     </div>
     </div>
   );
