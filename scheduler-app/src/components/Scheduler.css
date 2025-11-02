@@ -1,0 +1,93 @@
+.scheduler-container {
+  padding: 2rem;
+  min-height: calc(100vh - 80px);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.scheduler-main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.scheduler-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.scheduler-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.scheduler-subtitle {
+  font-size: 1.125rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.build-schedule-section {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.build-schedule-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  border-radius: 1.5rem;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: hsl(var(--foreground));
+  box-shadow: var(--shadow-glass);
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.2), hsl(var(--secondary) / 0.2));
+}
+
+.build-schedule-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.3), hsl(var(--secondary) / 0.3));
+}
+
+.calendar-view {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.back-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: hsl(var(--foreground));
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .scheduler-container {
+    padding: 1rem;
+  }
+
+  .scheduler-title {
+    font-size: 2rem;
+  }
+
+  .scheduler-subtitle {
+    font-size: 1rem;
+  }
+
+  .build-schedule-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}

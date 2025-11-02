@@ -1,0 +1,88 @@
+.app-container {
+  min-height: 100vh;
+  background: hsl(var(--background));
+  position: relative;
+}
+
+.sidebar {
+  position: fixed;
+  top: 80px;
+  left: -300px;
+  width: 280px;
+  height: calc(100vh - 80px);
+  transition: left 0.3s ease;
+  z-index: 90;
+  padding: 1rem;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-content {
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-glass);
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: hsl(var(--foreground));
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.sidebar-item:hover {
+  background: hsl(var(--muted) / 0.5);
+  transform: translateX(4px);
+}
+
+.sidebar-item.active {
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.2), hsl(var(--secondary) / 0.2));
+  border: 1px solid hsl(var(--primary) / 0.3);
+  color: hsl(var(--primary));
+}
+
+.sidebar-icon {
+  font-size: 1.5rem;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 80;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.main-content {
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+}
