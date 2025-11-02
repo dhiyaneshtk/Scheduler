@@ -19,7 +19,7 @@ function DashBoard() {
         console.log("📚 Loaded courses from backend:", data.length);
       })
       .catch((err) => {
-        console.error("❌ Failed to load courses:", err);
+        console.error("Failed to load courses:", err);
         setError("Could not load courses from database.");
       });
   }, []);
@@ -46,7 +46,7 @@ function DashBoard() {
   const addRestriction = () => {
     const last = restrictions[restrictions.length - 1];
     if (last && (!last.day || !last.startTime || !last.endTime)) {
-      setError("⚠️ Please complete the current restriction before adding another.");
+      setError("Please complete the current restriction before adding another.");
       return;
     }
 
@@ -76,13 +76,13 @@ function DashBoard() {
     setError("");
 
     if (courses.length === 0) {
-      setError("⚠️ Please select at least one course before generating a schedule.");
+      setError("Please select at least one course before generating a schedule.");
       return;
     }
 
     for (const r of restrictions) {
       if (!r.day || !r.startTime || !r.endTime) {
-        setError("⚠️ Please fill out all fields for each time restriction.");
+        setError("Please fill out all fields for each time restriction.");
         return;
       }
     }
@@ -103,10 +103,10 @@ function DashBoard() {
         // navigate to schedule page with the best schedule
         navigate("/schedule", { state: { schedule: result.best_schedule } });
       } else {
-        setError("❌ Schedule generation failed.");
+        setError("Schedule generation failed.");
       }
     } catch (err) {
-      setError("❌ Could not connect to backend. Please check your server.");
+      setError("Could not connect to backend.");
     }
   };
 
@@ -184,7 +184,7 @@ function DashBoard() {
       {/* Restrictions */}
       <section className="section">
         <div className="section-header">
-          <h2>⏰ Schedule Time Restrictions</h2>
+          <h2>Schedule Time Restrictions</h2>
           {restrictions.length > 0 && <span className="badge">{restrictions.length}</span>}
         </div>
 

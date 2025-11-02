@@ -35,7 +35,7 @@ function ScheduleView() {
 
   return (
     <div className="schedule-container">
-      <h1>📅 Your Weekly Schedule</h1>
+      <h1>Your Weekly Schedule</h1>
 
       <div className="calendar-grid">
         {days.map((day) => (
