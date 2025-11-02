@@ -14,26 +14,6 @@ function ScheduleForm() {
       .catch(err => console.error('Error loading courses:', err));
   }, []);
 
-  // Add a new course
-  const handleAddCourse = (e) => {
-    e.preventDefault();
-
-    const newCourse = { name, professor, time };
-    fetch('http://localhost:5000/api/courses', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newCourse)
-    })
-      .then(res => res.json())
-      .then(added => {
-        setCourses(prev => [...prev, added]); // add to list
-        setName('');
-        setProfessor('');
-        setTime('');
-      })
-      .catch(err => console.error('Error adding course:', err));
-  };
-
   return (
     <div className="schedule-form">
       <h2>Schedule Form</h2>
