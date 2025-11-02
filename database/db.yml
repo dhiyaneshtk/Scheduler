@@ -1,5 +1,5 @@
 host: localhost
-database: postgres
-user: postgres
-password: Cfgecamp@1
+database: scheduler
+user: root
+password: password
 port: 5432
