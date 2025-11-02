@@ -86,7 +86,7 @@ function DashBoard() {
     }
 
     const data = { courses, restrictions };
-    console.log("📦 Sending data to backend:", data);
+    console.log("Sending data to backend:", data);
 
     try {
       const res = await fetch("http://127.0.0.1:5000/generate", {

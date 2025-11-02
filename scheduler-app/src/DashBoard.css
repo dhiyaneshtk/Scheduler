@@ -1,11 +1,10 @@
 .dashboard-container {
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #fffdf8, #faf8f2);
+  background:  #fffdf8;
   color: #1a1a1a;
   font-family: "Inter", Arial, sans-serif;
   padding: 50px 20px;
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 /* Header */
@@ -17,7 +16,7 @@
 .title {
   font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(90deg, #000 0%, #d4a017 100%);
+  background: #F29559;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -55,7 +54,7 @@
 
 /* Search input */
 .search-input {
-  width: 100%;
+  width: 90%;
   padding: 14px 18px;
   font-size: 1rem;
   border: 1px solid #ddd;
