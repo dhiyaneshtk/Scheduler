@@ -2,17 +2,19 @@ import psycopg2
 import json
 from itertools import product
 from datetime import time
+from psycopg2.extras import RealDictCursor
 
-DB_NAME = "coursesdb"
-DB_USER = "root"
-DB_PASS = "password"
+DB_NAME = "postgres"
+DB_USER = "postgres"
+DB_PASS = "Cfgecamp@1"
 DB_HOST = "localhost"
 DB_PORT = "5432"
 
 
 def connect_db():
     return psycopg2.connect(
-        dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT
+        dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT,
+        cursor_factory=RealDictCursor
     )
 
 def time_overlap(a_start, a_end, b_start, b_end):

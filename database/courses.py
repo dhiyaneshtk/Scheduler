@@ -39,7 +39,7 @@ def clean_value(v):
     return None if v.strip() == "" else v
 
 # Read CSV + insert
-with open("courses.csv", newline='', encoding='utf-8') as f:
+with open("database/courses.csv", newline='', encoding='utf-8') as f:
     reader = csv.DictReader(f)
     for row in reader:
         for k, v in row.items():
@@ -61,7 +61,7 @@ conn.commit()
 # Verify row count
 cur.execute("SELECT COUNT(*) FROM courses;")
 count = cur.fetchone()[0]
-print(f"✅ Successfully inserted {count} rows into 'courses' table.")
+print(f"Successfully inserted {count} rows into 'courses' table.")
 
 cur.close()
 conn.close()
