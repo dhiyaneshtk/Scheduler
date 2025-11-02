@@ -38,15 +38,14 @@ def fetch_courses(course_codes):
     # Organize by course_code
     data = {}
     for r in rows:
-        subject_name, code, title, section, days, start, end, instructor, room = r
-        data.setdefault(code, []).append({
-            "course_title": title,
-            "section": section,
-            "days": days.split("|") if "|" in days else [days],
-            "start_time": start.strip(),
-            "end_time": end.strip(),
-            "instructor": instructor,
-            "room": room
+        data.setdefault(r["course_code"], []).append({
+            "course_title": r["course_title"],
+            "section": r["section"],
+            "days": r["day"].split("|") if "|" in r["day"] else [r["day"]],
+            "start_time": r["start_time"].split("|")[0].strip(),
+            "end_time": r["end_time"].split("|")[0].strip(),
+            "instructor": r["instructor"],
+            "room": r["room"]
         })
 
     conn.close()
