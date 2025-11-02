@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Search } from "lucide-react";
 import "./DashBoard.css";
+import { useNavigate } from "react-router-dom";
 
 function DashBoard() {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [courses, setCourses] = useState([]);
   const [restrictions, setRestrictions] = useState([]);
@@ -98,6 +100,8 @@ function DashBoard() {
       const result = await res.json();
       if (result.status === "success") {
         setError(`✅ Successfully generated ${result.valid_schedules} valid schedules.`);
+        // navigate to schedule page with the best schedule
+        navigate("/schedule", { state: { schedule: result.best_schedule } });
       } else {
         setError("❌ Schedule generation failed.");
       }
