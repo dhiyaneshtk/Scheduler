@@ -31,7 +31,7 @@ def generate():
     print("------------------------------\n")
 
     # ---- Extract courses and restrictions ----
-    course_codes = [c["code"] for c in data.get("courses", [])]
+    course_codes = [c["course_code"] for c in data.get("courses", [])]
     restrictions = data.get("restrictions", [])
 
     # ---- Convert restrictions to the format your scheduler expects ----
