@@ -1,14 +1,9 @@
 import psycopg2
 import csv
+from scheduler import connect_db
 
 # DB connection
-conn = psycopg2.connect(
-    dbname="postgres",
-    user="postgres",
-    password="Cfgecamp@1",
-    host="localhost",
-    port="5432"
-)
+conn = connect_db()
 cur = conn.cursor()
 
 # Drop and recreate table

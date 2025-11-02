@@ -1,15 +1,10 @@
 import psycopg2
-
-DB_NAME = "postgres"
-DB_USER = "postgres"
-DB_PASS = "Cfgecamp@1"
-DB_HOST = "localhost"
-DB_PORT = "5432"
+import yaml
+import os
+from scheduler import connect_db
 
 def create_unique_courses_table():
-    conn = psycopg2.connect(
-        dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT
-    )
+    conn = connect_db()
     cur = conn.cursor()
 
     # Drop + recreate table
@@ -30,7 +25,7 @@ def create_unique_courses_table():
     # Verify number of rows
     cur.execute("SELECT COUNT(*) FROM unique_courses;")
     count = cur.fetchone()[0]
-    print(f"[✅] Table 'unique_courses' created successfully with {count} rows.")
+    print(f"Table 'unique_courses' created successfully with {count} rows.")
 
     cur.close()
     conn.close()

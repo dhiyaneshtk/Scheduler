@@ -3,17 +3,16 @@ import json
 from itertools import product
 from datetime import time
 from psycopg2.extras import RealDictCursor
-
-DB_NAME = "postgres"
-DB_USER = "postgres"
-DB_PASS = "Cfgecamp@1"
-DB_HOST = "localhost"
-DB_PORT = "5432"
-
+import yaml
+import os
 
 def connect_db():
+    config = {}
+    yml_path = os.path.join(os.path.dirname(__file__), 'database/db.yml')
+    with open(yml_path, 'r') as file:
+        config = yaml.load(file, Loader=yaml.FullLoader)
     return psycopg2.connect(
-        dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT,
+        dbname=config['database'], user=config['user'], password=config['password'], host=config['host'], port=config['port'],
         cursor_factory=RealDictCursor
     )
 
